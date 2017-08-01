@@ -1,4 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
+
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -10,7 +12,7 @@ import { PlansPage } from '../pages/plans/plans';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
@@ -37,5 +39,16 @@ export class MyApp {
 
   openPage(page) {
     this.nav.setRoot(page.component);
+  }
+
+  ngOnInit() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyDmy-4o2xdRWXDdpjmPszAlwdzSsu_dBk4",
+      authDomain: "angular-ionic-health.firebaseapp.com",
+      databaseURL: "https://angular-ionic-health.firebaseio.com",
+      projectId: "angular-ionic-health",
+      storageBucket: "angular-ionic-health.appspot.com",
+      messagingSenderId: "138237208210"
+    });
   }
 }
