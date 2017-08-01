@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
-$IMPORTSTATEMENT
+import { NavController, NavParams  } from 'ionic-angular';
 
-/**
- * Generated class for the PlansPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-$IONICPAGE
 @Component({
   selector: 'page-plans',
   templateUrl: 'plans.html',
