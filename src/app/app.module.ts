@@ -13,8 +13,10 @@ import { SigninPage } from '../pages/auth/signin/signin';
 import { SignupPage } from '../pages/auth/signup/signup';
 import { ResetPasswordPage } from '../pages/auth/reset-password/reset-password';
 
+import { Facebook } from '@ionic-native/facebook'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { PlansProvider } from '../providers/plans/plans.provider';
 import { AuthProvider } from '../providers/auth/auth.provider';
 
@@ -45,6 +47,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     ResetPasswordPage
   ],
   providers: [
+    Facebook,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

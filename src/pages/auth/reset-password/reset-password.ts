@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, Loading, LoadingController, NavController, AlertController } from 'ionic-angular';
+import { LoadingController, NavController, AlertController } from 'ionic-angular';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { EmailValidator } from '../../../validators/email';

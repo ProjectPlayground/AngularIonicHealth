@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, Loading, LoadingController, NavController, AlertController } from 'ionic-angular';
+import { Loading, LoadingController, NavController, AlertController } from 'ionic-angular';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { EmailValidator } from '../../../validators/email';
@@ -58,6 +58,10 @@ export class SigninPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
     }
+  }
+
+  signInWithFacebook() {
+    this.authProvider.signInWithFacebook();
   }
   
   goToSignup(): void { 
