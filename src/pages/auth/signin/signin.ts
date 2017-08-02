@@ -15,7 +15,7 @@ import { ResetPasswordPage } from '../reset-password/reset-password';
 })
 export class SigninPage {
   public loginForm: FormGroup;
-  public loading:Loading;
+  public loading: Loading;
 
   constructor(public navCtrl: NavController, 
               public loadingCtrl: LoadingController, 
@@ -59,10 +59,12 @@ export class SigninPage {
       this.loading.present();
     }
   }
-
-  signInWithFacebook() {
-    this.authProvider.signInWithFacebook();
+  
+  signInWithFacebook(): void {
+    this.authProvider.signInWithFacebook()
+    this.navCtrl.setRoot(HomePage);
   }
+  
   
   goToSignup(): void { 
     this.navCtrl.push(SignupPage); 

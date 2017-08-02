@@ -26,18 +26,16 @@ export class AuthProvider {
   }
 
   signInWithFacebook(){
-    this.facebook.login(['email']).then( (response) => {
-      const facebookCredential = firebase.auth.FacebookAuthProvider
-          .credential(response.authResponse.accessToken);
-      firebase.auth().signInWithCredential(facebookCredential)
-      .then((success) => {
-          console.log("Firebase success: " + JSON.stringify(success));
-          this.userProfile = success;
-      })
-      .catch((error) => {
-          console.log("Firebase failure: " + JSON.stringify(error));
-      });
-    }).catch((error) => { console.log(error) });
+    const providerFacebook = new firebase.auth.FacebookAuthProvider();
+      firebase.auth().signInWithPopup(providerFacebook)
+        .then(
+          response => {
+            this.getIdToken;
+          }
+        )
+        .catch((error) => {
+          error => console.log(error)
+        });
   }
 
   signUpUser(email: string, password: string): firebase.Promise<any> {

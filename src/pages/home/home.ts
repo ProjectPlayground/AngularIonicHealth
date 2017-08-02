@@ -18,7 +18,7 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public authProvider: AuthProvider) 
   {
-      this.isAuthenticated = this.authProvider.isAuthenticated()
+    this.isAuthenticated = this.authProvider.isAuthenticated()
   }
 
   userEmail() {
