@@ -4,13 +4,25 @@ import { Facebook } from '@ionic-native/facebook';
 
 @Injectable()
 export class AuthProvider {
+  token: string;
   public userProfile: any = null;
 
   constructor(private facebook: Facebook) {
   }
 
   signInUser(email: string, password: string): firebase.Promise<any> {
-    return firebase.auth().signInWithEmailAndPassword(email, password);
+    return firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(
+        response => {
+          firebase.auth().currentUser.getIdToken()
+          .then(
+              (token: string) => this.token = token
+          );
+        }
+      )
+      .catch(
+          error => console.log(error)
+      );
   }
 
   signInWithFacebook(){
@@ -40,8 +52,21 @@ export class AuthProvider {
     return firebase.auth().sendPasswordResetEmail(email);
   }
 
-  logoutUser(): firebase.Promise<void> {
-    return firebase.auth().signOut();
+  logoutUser() {
+    firebase.auth().signOut();
+    this.token = null;
+  }
+
+  getIdToken() {
+    firebase.auth().currentUser.getIdToken()
+      .then(
+        (token: string) => this.token = token
+      );
+    return this.token;
+  }
+
+  isAuthenticated() {
+    return this.token != null;
   }
 
 }

@@ -8,20 +8,34 @@
 </ion-header>
 
 <ion-content padding>
-
   <ion-fab top right edge>
     <button ion-fab mini color="secondary"><ion-icon name="more"></ion-icon></button>
     <ion-fab-list>
-      <button ion-fab (click)=" goToSignin()"><ion-icon name="log-in"></ion-icon></button>
-      <button ion-fab (click)=" goToSignup()"><ion-icon name="person-add"></ion-icon></button>
-      <button ion-fab><ion-icon name="log-out"></ion-icon></button>
+      <div *ngIf="!authProvider.isAuthenticated(); else loggedin">
+        <button ion-fab (click)="goToSignin()"><ion-icon name="log-in"></ion-icon></button>
+        <button ion-fab (click)="goToSignup()"><ion-icon name="person-add"></ion-icon></button>
+      </div>
+      <ng-template #loggedin>
+        <button ion-fab (click)="onSignOut()"><ion-icon name="log-out"></ion-icon></button>
+      </ng-template>
     </ion-fab-list>
   </ion-fab>
 
-  <h3>Ionic Menu Starter</h3>
+  <div *ngIf="authProvider.isAuthenticated();">
+    <h4>(User: {{userEmail()}})</h4>
+  </div>
+
+  <h3>Angular Ionic Health App </h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Quisque semper condimentum dolor, non consequat diam varius vel. 
+    Maecenas ut elit a velit consequat mollis ac nec ipsum. Fusce vel malesuada mauris. 
+    Vivamus vel odio in diam aliquet vehicula et in erat. Pellentesque at tellus sit amet massa tincidunt gravida.
+    Mauris ac lacus ex. Vivamus eget justo vestibulum, dignissim orci ac, auctor lectus. 
+    Maecenas placerat mauris id purus sodales, non pulvinar risus elementum. Donec euismod tortor quis hendrerit pellentesque. 
+    Aliquam bibendum condimentum libero, eget blandit felis suscipit ac. Proin eu pretium tortor, et luctus tortor. 
+    Proin porta dapibus ligula sed elementum. Suspendisse venenatis egestas ultrices.
   </p>
 
   <button ion-button outline (click)="goTo()">Plans</button>
