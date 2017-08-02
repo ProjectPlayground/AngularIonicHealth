@@ -3,14 +3,12 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Auth</ion-title>
+    <ion-title>Sign in</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <img src="http://placehold.it/300x100">
-
-  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+  <form [formGroup]="loginForm" (submit)="signInUser()" novalidate>
 
     <ion-item>
       <ion-label stacked>Email</ion-label>

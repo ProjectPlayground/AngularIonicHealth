@@ -4,14 +4,17 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { EmailValidator } from '../../../validators/email';
 import { AuthProvider } from '../../../providers/auth/auth.provider';
+
 import { HomePage } from '../../home/home';
+import { SignupPage } from '../signup/signup';
+import { ResetPasswordPage } from '../reset-password/reset-password';
 
 @Component({
   selector: 'page-signin',
   templateUrl: 'signin.html',
 })
 export class SigninPage {
-  public loginForm:FormGroup;
+  public loginForm: FormGroup;
   public loading:Loading;
 
   constructor(public navCtrl: NavController, 
@@ -26,7 +29,7 @@ export class SigninPage {
     });
   }
 
-  loginUser(): void {
+  signInUser(): void {
     if (!this.loginForm.valid){
       console.log(this.loginForm.value);
     } else {
@@ -57,8 +60,8 @@ export class SigninPage {
     }
   }
   
-  goToSignup(): void { this.navCtrl.push('signup'); }
+  goToSignup(): void { this.navCtrl.push(SignupPage); }
 
-  goToResetPassword(): void { this.navCtrl.push('reset-password'); }
+  goToResetPassword(): void { this.navCtrl.push(ResetPasswordPage); }
 
 }
