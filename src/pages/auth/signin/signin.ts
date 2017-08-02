@@ -60,8 +60,12 @@ export class SigninPage {
     }
   }
   
-  goToSignup(): void { this.navCtrl.push(SignupPage); }
+  goToSignup(): void { 
+    this.navCtrl.push(SignupPage); 
+  }
 
-  goToResetPassword(): void { this.navCtrl.push(ResetPasswordPage); }
+  goToResetPassword(): void {
+     this.navCtrl.push(ResetPasswordPage); 
+  }
 
 }
