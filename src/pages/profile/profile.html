@@ -7,7 +7,50 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content class="blurry-background">
+  <img src="assets/img/7.jpg">
+</ion-content>
 
 <ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <img src="http://via.placeholder.com/150x150">
+    </ion-card-header>
+    <ion-card-content center>
+     {{userEmail()}}
+     <br/><br/>
+
+      <b>Exercise level</b>
+      <ion-item>
+        <ion-range min="1000" max="2000" step="100" snaps="true" [(ngModel)]="fitlevel" color="primary">
+          <ion-icon range-left small color="primary" name="football"></ion-icon>
+          <ion-icon range-right color="primary" name="football"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <br/>
+      <ion-item>
+        <ion-label>Notifications</ion-label>
+        <ion-checkbox disabled="true"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Extra options</ion-label>
+        <ion-checkbox color="primary" checked="false"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Stepcounter</ion-label>
+        <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      </ion-item>
+      
+      <br/><br/>
+      <button ion-button block clear (click)="goToResetPassword()">
+        Reset my password
+      </button> 
+
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

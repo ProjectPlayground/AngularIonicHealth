@@ -28,6 +28,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
   declarations: [
     MyApp,
     HomePage,
+    ProfilePage,
     ListPage,
     PlansPage,
     StepcounterPage,
@@ -46,6 +47,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
   entryComponents: [
     MyApp,
     HomePage,
+    ProfilePage,
     ListPage,
     PlansPage,
     StepcounterPage,

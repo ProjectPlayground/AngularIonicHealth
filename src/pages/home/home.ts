@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
-import { PlansPage } from '../plans/plans';
+import { ProfilePage } from '../profile/profile';
 import { SigninPage } from '../auth/signin/signin';
 import { SignupPage } from '../auth/signup/signup';
 
@@ -37,7 +37,7 @@ export class HomePage {
       alert.present();
     }
   }*/
-goTo() {this.navCtrl.push(PlansPage);}
+  goTo() {this.navCtrl.push(ProfilePage);}
 
   
   goToSignup() {
