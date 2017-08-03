@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
-import { StepcounterPage } from '../stepcounter/stepcounter';
+import { PlansPage } from '../plans/plans';
 import { SigninPage } from '../auth/signin/signin';
 import { SignupPage } from '../auth/signup/signup';
 
@@ -24,7 +24,8 @@ export class HomePage {
   userEmail() {
     return firebase.auth().currentUser.email;
   }
-
+  
+  /*
   goTo() {
     if (this.isAuthenticated()) {
       return this.navCtrl.push(StepcounterPage);
@@ -35,7 +36,9 @@ export class HomePage {
       });
       alert.present();
     }
-  }
+  }*/
+goTo() {this.navCtrl.push(PlansPage);}
+
   
   goToSignup() {
      this.navCtrl.push(SignupPage);

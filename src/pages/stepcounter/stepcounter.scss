@@ -1,3 +1,16 @@
-page-stepcounter {
+page-stepcounter { 
+    .blurry-background {
+        img {
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+    }
 
 }

@@ -7,6 +7,10 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content class="blurry-background">
+  <img src="assets/img/5.jpg">
+</ion-content>
+
 <ion-content padding>
   <ion-fab top right edge>
     <button ion-fab mini color="secondary"><ion-icon name="more"></ion-icon></button>
@@ -25,18 +29,22 @@
     <h6>Welcome {{userEmail()}}!</h6>
   </div>
 
-  <h3>Angular Ionic Health App </h3>
-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Quisque semper condimentum dolor, non consequat diam varius vel. 
-    Maecenas ut elit a velit consequat mollis ac nec ipsum. Fusce vel malesuada mauris. 
-    Vivamus vel odio in diam aliquet vehicula et in erat. Pellentesque at tellus sit amet massa tincidunt gravida.
-    Mauris ac lacus ex. Vivamus eget justo vestibulum, dignissim orci ac, auctor lectus. 
-    Maecenas placerat mauris id purus sodales, non pulvinar risus elementum. Donec euismod tortor quis hendrerit pellentesque. 
-    Aliquam bibendum condimentum libero, eget blandit felis suscipit ac. Proin eu pretium tortor, et luctus tortor. 
-    Proin porta dapibus ligula sed elementum. Suspendisse venenatis egestas ultrices.
-  </p>
-
-  <button ion-button outline (click)="goTo()">Stepcounter</button>
+  <ion-card>
+    <ion-card-header>
+      <h3>Angular Ionic Health App </h3>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Quisque semper condimentum dolor, non consequat diam varius vel. 
+        Maecenas ut elit a velit consequat mollis ac nec ipsum. Fusce vel malesuada mauris. 
+        Vivamus vel odio in diam aliquet vehicula et in erat. Pellentesque at tellus sit amet massa tincidunt gravida.
+        Mauris ac lacus ex. Vivamus eget justo vestibulum, dignissim orci ac, auctor lectus. 
+        Maecenas placerat mauris id purus sodales, non pulvinar risus elementum. Donec euismod tortor quis hendrerit pellentesque. 
+        Aliquam bibendum condimentum libero, eget blandit felis suscipit ac. Proin eu pretium tortor, et luctus tortor. 
+        Proin porta dapibus ligula sed elementum. Suspendisse venenatis egestas ultrices.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block (click)="goTo()">Stepcounter</button>
 </ion-content>
