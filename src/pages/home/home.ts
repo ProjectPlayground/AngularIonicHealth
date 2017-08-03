@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
-import { PlansPage } from '../plans/plans';
+import { StepcounterPage } from '../stepcounter/stepcounter';
 import { SigninPage } from '../auth/signin/signin';
 import { SignupPage } from '../auth/signup/signup';
 
@@ -26,7 +26,7 @@ export class HomePage {
   }
 
   goTo() {
-    this.navCtrl.push(PlansPage);
+    this.navCtrl.push(StepcounterPage);
   }
   
   goToSignup() {

@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
+import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
 import { SigninPage } from '../pages/auth/signin/signin';
 import { SignupPage } from '../pages/auth/signup/signup';
@@ -16,6 +17,7 @@ import { ResetPasswordPage } from '../pages/auth/reset-password/reset-password';
 import { Facebook } from '@ionic-native/facebook'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Stepcounter } from '@ionic-native/stepcounter'
 
 import { PlansProvider } from '../providers/plans/plans.provider';
 import { AuthProvider } from '../providers/auth/auth.provider';
@@ -26,6 +28,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     HomePage,
     ListPage,
     PlansPage,
+    StepcounterPage,
     SigninPage,
     SignupPage,
     ResetPasswordPage
@@ -42,6 +45,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     HomePage,
     ListPage,
     PlansPage,
+    StepcounterPage,
     SigninPage,
     SignupPage,
     ResetPasswordPage
@@ -50,6 +54,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     Facebook,
     StatusBar,
     SplashScreen,
+    Stepcounter,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlansProvider,
     AuthProvider

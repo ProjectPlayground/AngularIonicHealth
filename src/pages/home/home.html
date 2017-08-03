@@ -22,7 +22,7 @@
   </ion-fab>
 
   <div *ngIf="authProvider.isAuthenticated();">
-    <h4>(User: {{userEmail()}})</h4>
+    <h6>Welcome {{userEmail()}}!</h6>
   </div>
 
   <h3>Angular Ionic Health App </h3>
@@ -38,5 +38,5 @@
     Proin porta dapibus ligula sed elementum. Suspendisse venenatis egestas ultrices.
   </p>
 
-  <button ion-button outline (click)="goTo()">Plans</button>
+  <button ion-button outline (click)="goTo()">Stepcounter</button>
 </ion-content>

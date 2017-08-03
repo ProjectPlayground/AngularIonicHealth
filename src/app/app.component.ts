@@ -5,10 +5,17 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AuthProvider } from '../providers/auth/auth.provider';
+
+// Public pages
 import { HomePage } from '../pages/home/home';
+import { SigninPage } from '../pages/auth/signin/signin';
+
+// Authenticated pages
 import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
-import { SigninPage } from '../pages/auth/signin/signin';
+import { StepcounterPage } from '../pages/stepcounter/stepcounter';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -21,14 +28,18 @@ export class MyApp implements OnInit {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    public authProvider: AuthProvider) 
+  {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Plans', component: PlansPage },
-      { title: 'Auth', component: SigninPage }
+      { title: 'Steps', component: StepcounterPage }
     ];
 
   }
@@ -40,7 +51,17 @@ export class MyApp implements OnInit {
     });
   }
 
-  openPage(page) {
+  // Public pages
+  homePage() {
+    this.nav.setRoot(HomePage);
+  }
+
+  signInPage() {
+    this.nav.setRoot(SigninPage);
+  }
+
+  // Authenticated pages
+  openAuthPages(page) {
     this.nav.setRoot(page.component);
   }
 

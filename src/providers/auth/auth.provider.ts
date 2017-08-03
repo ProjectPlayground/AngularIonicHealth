@@ -7,7 +7,7 @@ export class AuthProvider {
   token: string;
   public userProfile: any = null;
 
-  constructor(private facebook: Facebook) {
+  constructor() {
   }
 
   signInUser(email: string, password: string): firebase.Promise<any> {
