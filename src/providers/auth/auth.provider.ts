@@ -41,9 +41,14 @@ export class AuthProvider {
   signUpUser(email: string, password: string): firebase.Promise<any> {
     return firebase.auth().createUserWithEmailAndPassword(email, password)
     .then( newUser => {
-        firebase.database().ref('/userProfiles').child(newUser.uid)
-        .set({ email: email });
+      this.verificationEmail();
+      firebase.database().ref('/userProfiles').child(newUser.uid)
+      .set({ email: email });
     });
+  }
+
+  verificationEmail(): firebase.Promise<void> {
+    return firebase.auth().currentUser.sendEmailVerification();
   }
   
   resetPassword(email: string): firebase.Promise<void> {
