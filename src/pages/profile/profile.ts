@@ -4,6 +4,7 @@ import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
+import { ProfileSettingsPage } from '../profile/profile-settings/profile-settings';
 import { ResetPasswordPage } from '../auth/reset-password/reset-password';
 
 @Component({
@@ -22,6 +23,10 @@ export class ProfilePage {
 
   userEmail() {
     return firebase.auth().currentUser.email;
+  }
+
+  goToSettings(): void {
+     this.navCtrl.push(ProfileSettingsPage); 
   }
 
   goToResetPassword(): void {

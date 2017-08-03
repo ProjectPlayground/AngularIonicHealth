@@ -8,6 +8,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
+import { ProfileSettingsPage } from '../pages/profile/profile-settings/profile-settings';
 import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
@@ -29,6 +30,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     MyApp,
     HomePage,
     ProfilePage,
+    ProfileSettingsPage,
     ListPage,
     PlansPage,
     StepcounterPage,
@@ -48,6 +50,7 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     MyApp,
     HomePage,
     ProfilePage,
+    ProfileSettingsPage,
     ListPage,
     PlansPage,
     StepcounterPage,

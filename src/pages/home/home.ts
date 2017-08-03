@@ -28,7 +28,7 @@ export class HomePage {
   /*
   goTo() {
     if (this.isAuthenticated()) {
-      return this.navCtrl.push(StepcounterPage);
+      return this.navCtrl.push(ProfilePage);
     } else {
       let alert = this.alertCtrl.create({
         title: 'Please sign in first!',
@@ -38,7 +38,7 @@ export class HomePage {
     }
   }*/
   goTo() {this.navCtrl.push(ProfilePage);}
-
+  
   
   goToSignup() {
      this.navCtrl.push(SignupPage);

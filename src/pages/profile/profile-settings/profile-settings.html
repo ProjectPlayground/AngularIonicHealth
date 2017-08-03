@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="blurry-background">
+  <img src="assets/img/1.jpg">
+</ion-content>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <img src="http://via.placeholder.com/150x150" (click)="uploadImage()">
+    </ion-card-header>
+
+    <ion-card-content>  
+      <ion-item>
+        <ion-label>Notifications</ion-label>
+        <ion-select [(ngModel)]="notifications" interface="popover">
+          <ion-option value="enable">Enable</ion-option>
+          <ion-option value="mute">Mute</ion-option>
+          <ion-option value="mute_week">Mute for a week</ion-option>
+          <ion-option value="mute_year">Mute for a year</ion-option>
+          <ion-option value="mute_forever">Mute forever</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Extra options</ion-label>
+        <ion-checkbox color="primary" disabled="true"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Stepcounter</ion-label>
+        <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Auto updates</ion-label>
+        <ion-checkbox color="primary" checked="false"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Share data</ion-label>
+        <ion-checkbox color="primary" checked="true"></ion-checkbox>
+      </ion-item>
+
+      <br/><br/>
+      <button ion-button block clear>
+        Save settings
+      </button> 
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
