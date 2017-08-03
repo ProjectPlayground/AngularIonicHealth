@@ -30,7 +30,7 @@ export class HomePage {
       return this.navCtrl.push(StepcounterPage);
     } else {
       let alert = this.alertCtrl.create({
-        title: 'Please signin first!',
+        title: 'Please sign in first!',
         buttons: ['Okay']
       });
       alert.present();
@@ -49,7 +49,7 @@ export class HomePage {
      this.authProvider.logoutUser();
      let alert = this.alertCtrl.create({
       title: 'Logout',
-      message: 'Logout is succesfull',
+      message: 'Logout is succesful',
       buttons: [
         {
           text: 'Ok',
