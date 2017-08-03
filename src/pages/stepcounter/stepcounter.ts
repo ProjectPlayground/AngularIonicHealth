@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams  } from 'ionic-angular';
 import { Stepcounter } from '@ionic-native/stepcounter';
 
+import { AuthProvider } from '../../providers/auth/auth.provider';
+
 @Component({
   selector: 'page-stepcounter',
   templateUrl: 'stepcounter.html',
@@ -9,9 +11,12 @@ import { Stepcounter } from '@ionic-native/stepcounter';
 export class StepcounterPage {
   startingOffset = 0;
 
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              private stepcounter: Stepcounter) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public authProvider: AuthProvider,
+    private stepcounter: Stepcounter) 
+  {
   }
 
   startStepcounter() {
@@ -36,5 +41,5 @@ export class StepcounterPage {
     this.stepcounter.getHistory()
       .then(historyObj => console.log('stepcounter-history success', historyObj), 
       onFailure => console.log('stepcounter-history error', onFailure));
-  }
+  } 
 }

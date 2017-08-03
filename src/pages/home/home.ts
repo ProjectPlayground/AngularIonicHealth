@@ -13,14 +13,12 @@ import { SignupPage } from '../auth/signup/signup';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  isAuthenticated = false;
 
   constructor(
     public alertCtrl: AlertController,
     public navCtrl: NavController,
     public authProvider: AuthProvider) 
   {
-    this.isAuthenticated = this.authProvider.isAuthenticated()
   }
 
   userEmail() {
@@ -28,7 +26,15 @@ export class HomePage {
   }
 
   goTo() {
-    this.navCtrl.push(StepcounterPage);
+    if (this.isAuthenticated()) {
+      return this.navCtrl.push(StepcounterPage);
+    } else {
+      let alert = this.alertCtrl.create({
+        title: 'Please signin first!',
+        buttons: ['Okay']
+      });
+      alert.present();
+    }
   }
   
   goToSignup() {
@@ -54,6 +60,10 @@ export class HomePage {
       ]
     });
     alert.present();
+  } 
+
+  isAuthenticated() {
+    return this.authProvider.isAuthenticated();
   }
 
 }
