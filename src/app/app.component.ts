@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { SigninPage } from '../pages/auth/signin/signin';
 
 // Authenticated pages
+import { ProfilePage } from '../pages/profile/profile';
 import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
@@ -37,6 +38,7 @@ export class MyApp implements OnInit {
     this.initializeApp();
 
     this.pages = [
+      { title: 'Profile', component: ProfilePage },
       { title: 'List', component: ListPage },
       { title: 'Plans', component: PlansPage },
       { title: 'Steps', component: StepcounterPage }
