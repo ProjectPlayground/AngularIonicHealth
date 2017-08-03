@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { AlertController, NavController } from 'ionic-angular';
 import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
@@ -15,8 +15,10 @@ import { SignupPage } from '../auth/signup/signup';
 export class HomePage {
   isAuthenticated = false;
 
-  constructor(public navCtrl: NavController,
-              public authProvider: AuthProvider) 
+  constructor(
+    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    public authProvider: AuthProvider) 
   {
     this.isAuthenticated = this.authProvider.isAuthenticated()
   }
@@ -39,6 +41,19 @@ export class HomePage {
 
   onSignOut() {
      this.authProvider.logoutUser();
+     let alert = this.alertCtrl.create({
+      title: 'Logout',
+      message: 'Logout is succesfull',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            console.log('Succesfully logout');
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }
