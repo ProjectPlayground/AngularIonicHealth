@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { ImageCropperComponent } from "ng2-img-cropper";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -24,6 +25,7 @@ import { Stepcounter } from '@ionic-native/stepcounter'
 
 import { PlansProvider } from '../providers/plans/plans.provider';
 import { AuthProvider } from '../providers/auth/auth.provider';
+import { UploadProvider } from '../providers/upload/upload.provider';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     StepcounterPage,
     SigninPage,
     SignupPage,
-    ResetPasswordPage
+    ResetPasswordPage,
+    ImageCropperComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     StepcounterPage,
     SigninPage,
     SignupPage,
-    ResetPasswordPage
+    ResetPasswordPage,
+    ImageCropperComponent
   ],
   providers: [
     Facebook,
@@ -65,7 +69,8 @@ import { AuthProvider } from '../providers/auth/auth.provider';
     Stepcounter,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlansProvider,
-    AuthProvider
+    AuthProvider,
+    UploadProvider
   ]
 })
 export class AppModule {}

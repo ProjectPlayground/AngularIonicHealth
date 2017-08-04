@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
-import { ProfilePage } from '../profile/profile';
+import { ProfileSettingsPage } from '../profile/profile-settings/profile-settings';
 import { SigninPage } from '../auth/signin/signin';
 import { SignupPage } from '../auth/signup/signup';
 
@@ -25,7 +25,7 @@ export class HomePage {
     return firebase.auth().currentUser.email;
   }
   
-  
+  /*
   goTo() {
     if (this.isAuthenticated()) {
       return this.navCtrl.push(ProfilePage);
@@ -37,10 +37,10 @@ export class HomePage {
       alert.present();
     }
   }
-
-  /*
-  goTo() {this.navCtrl.push(ProfilePage);}
   */
+  
+  goTo() {this.navCtrl.push(ProfileSettingsPage);}
+  
   
   goToSignup() {
      this.navCtrl.push(SignupPage);
