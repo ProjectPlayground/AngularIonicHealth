@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, NavParams  } from 'ionic-angular';
 import { CropperSettings } from "ng2-img-cropper";
 // import * as firebase from 'firebase';
@@ -10,7 +10,7 @@ import { UploadProvider } from '../../../providers/upload/upload.provider';
   selector: 'page-profile-settings',
   templateUrl: 'profile-settings.html',
 })
-export class ProfileSettingsPage {  
+export class ProfileSettingsPage implements OnInit {  
   data: any;
   cropperSettings: CropperSettings;
 
@@ -26,15 +26,24 @@ export class ProfileSettingsPage {
     private uploadProvider: UploadProvider) 
   {
     this.cropperSettings = new CropperSettings();
-    this.cropperSettings.width = 100;
-    this.cropperSettings.height = 100;
-    this.cropperSettings.croppedWidth =100;
-    this.cropperSettings.croppedHeight = 100;
-    this.cropperSettings.canvasWidth = 400;
-    this.cropperSettings.canvasHeight = 300;
+    this.cropperSettings.width = 120;
+    this.cropperSettings.height = 120;
+    this.cropperSettings.croppedWidth = 120;
+    this.cropperSettings.croppedHeight = 120;
+    this.cropperSettings.canvasWidth = 150;
+    this.cropperSettings.canvasHeight = 200;
     this.cropperSettings.rounded = true
 
     this.data = {};
+  }
+
+  ngOnInit() {
+    /*
+    this.uploadProvider.getProfileImage(this.user)
+    .subscribe(image => {
+      this.data = image;
+    })
+    */
   }
 
   uploadImage() {

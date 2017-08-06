@@ -10,7 +10,6 @@ export class UploadProvider {
   }  
   
   uploadProfileImage(user, img) {
-    // Create a root reference
     let storageRef = firebase.storage().ref();
 
     let path = `/profile/${this.uid}`;
@@ -20,12 +19,13 @@ export class UploadProvider {
       firebase.database().ref().child(`userProfiles/${this.uid}/profile/image`).update({ path: path, filename: this.uid })
     });
   }
-/*
-  getProfileImage(user) :  ReplaySubject<any>{
+  
+  /*
+  getProfileImage(user): ReplaySubject<any>{
     let resultSubject = new ReplaySubject(1);
     let storage = firebase.storage();
 
-    firebase.database.object(`userProfiles/${user.$key}/profile/image`)
+    firebase.database().ref().child(`userProfiles/${this.uid}/profile/image`)
       .subscribe(image => {
         console.log('image', image);
         if(image.path != null){
@@ -41,6 +41,6 @@ export class UploadProvider {
       });
 
     return resultSubject;
-  }
-*/
+  }*/
+
 }

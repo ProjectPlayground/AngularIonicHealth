@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams  } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
+import { PlansSettingsPage } from './plans-settings/plans-settings';
+
 import { PlansProvider } from '../../providers/plans/plans.provider';
 
 @Component({
@@ -20,6 +22,10 @@ export class PlansPage {
       //  this.plans = plans; 
       //  console.log(plans); 
       //})
+  }  
+
+  goToPlansSettings() {
+     this.navCtrl.push(PlansSettingsPage);
   }
 
 }

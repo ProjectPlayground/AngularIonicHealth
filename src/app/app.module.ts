@@ -14,6 +14,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { ProfileSettingsPage } from '../pages/profile/profile-settings/profile-settings';
 import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
+import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
 import { Facebook } from '@ionic-native/facebook'
@@ -32,6 +33,7 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     ProfileSettingsPage,
     ListPage,
     PlansPage,
+    PlansSettingsPage,
     StepcounterPage,
     ImageCropperComponent
   ],
@@ -51,6 +53,7 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     ProfileSettingsPage,
     ListPage,
     PlansPage,
+    PlansSettingsPage,
     StepcounterPage,
     ImageCropperComponent
   ],
