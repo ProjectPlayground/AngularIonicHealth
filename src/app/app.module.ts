@@ -6,6 +6,8 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ImageCropperComponent } from "ng2-img-cropper";
 
+import { AuthModule } from '../pages/auth/auth.module';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
@@ -14,17 +16,12 @@ import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
-import { SigninPage } from '../pages/auth/signin/signin';
-import { SignupPage } from '../pages/auth/signup/signup';
-import { ResetPasswordPage } from '../pages/auth/reset-password/reset-password';
-
 import { Facebook } from '@ionic-native/facebook'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Stepcounter } from '@ionic-native/stepcounter'
 
 import { PlansProvider } from '../providers/plans/plans.provider';
-import { AuthProvider } from '../providers/auth/auth.provider';
 import { UploadProvider } from '../providers/upload/upload.provider';
 
 @NgModule({
@@ -36,9 +33,6 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     ListPage,
     PlansPage,
     StepcounterPage,
-    SigninPage,
-    SignupPage,
-    ResetPasswordPage,
     ImageCropperComponent
   ],
   imports: [
@@ -47,6 +41,7 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     FormsModule,
     IonicImageViewerModule,
     IonicModule.forRoot(MyApp),
+    AuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,9 +52,6 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     ListPage,
     PlansPage,
     StepcounterPage,
-    SigninPage,
-    SignupPage,
-    ResetPasswordPage,
     ImageCropperComponent
   ],
   providers: [
@@ -69,7 +61,6 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     Stepcounter,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlansProvider,
-    AuthProvider,
     UploadProvider
   ]
 })
