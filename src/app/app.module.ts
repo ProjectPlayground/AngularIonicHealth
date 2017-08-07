@@ -1,3 +1,4 @@
+// 3rd party modules
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,8 +7,10 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { ImageCropperComponent } from "ng2-img-cropper";
 
+// Modules
 import { AuthModule } from '../pages/auth/auth.module';
 
+// Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
@@ -17,13 +20,17 @@ import { PlansPage } from '../pages/plans/plans';
 import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
-import { Facebook } from '@ionic-native/facebook'
+// Plugins
+import { Facebook } from '@ionic-native/facebook';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Stepcounter } from '@ionic-native/stepcounter'
+import { Stepcounter } from '@ionic-native/stepcounter';
+import { Camera } from '@ionic-native/camera';
 
+// Services - Providers
 import { PlansProvider } from '../providers/plans/plans.provider';
 import { UploadProvider } from '../providers/upload/upload.provider';
+import { CameraProvider } from '../providers/camera/camera.provider';
 
 @NgModule({
   declarations: [
@@ -64,7 +71,8 @@ import { UploadProvider } from '../providers/upload/upload.provider';
     Stepcounter,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlansProvider,
-    UploadProvider
+    UploadProvider,
+    CameraProvider
   ]
 })
 export class AppModule {}
