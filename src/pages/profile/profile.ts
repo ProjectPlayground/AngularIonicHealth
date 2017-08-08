@@ -13,6 +13,12 @@ import { ResetPasswordPage } from '../auth/reset-password/reset-password';
 })
 export class ProfilePage {
   fitlevel: number = 1800;
+  weight: number = 70;
+  height: number = 180;
+  gender: string = "m";
+  day: number;
+  month: string;
+  year: number;
 
   constructor(
     public navCtrl: NavController, 
