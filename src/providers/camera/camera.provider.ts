@@ -6,11 +6,26 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class CameraProvider {
 
   constructor(
-    public http: HttpClient,
+    public http: HttpClient,/*
     private camera: Camera,
-    private options: CameraOptions) 
-  {
+    private options: CameraOptions*/) 
+  {/*
+    this.options = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+    */
   }
   
+  /*
+  getPicture() {
+    this.camera.getPicture(this.options)
+      .then((imageData) => {
+         let base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+    });
+  }*/
   
 }

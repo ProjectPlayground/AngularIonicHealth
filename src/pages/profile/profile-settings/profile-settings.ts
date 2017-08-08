@@ -5,6 +5,7 @@ import { CropperSettings } from "ng2-img-cropper";
 
 import { AuthProvider } from '../../../providers/auth/auth.provider';
 import { UploadProvider } from '../../../providers/upload/upload.provider';
+// import { CameraProvider } from '../../../providers/camera/camera.provider';
 
 @Component({
   selector: 'page-profile-settings',
@@ -23,7 +24,9 @@ export class ProfileSettingsPage implements OnInit {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public authProvider: AuthProvider,
-    private uploadProvider: UploadProvider) 
+    private uploadProvider: UploadProvider,
+    // private cameraProvider: CameraProvider
+  ) 
   {
     this.cropperSettings = new CropperSettings();
     this.cropperSettings.width = 120;
@@ -64,6 +67,10 @@ export class ProfileSettingsPage implements OnInit {
 
   changingImageClick() {
     this.changingImage = true;
+  }
+
+  takePicture() {
+    // this.cameraProvider.getPicture();
   }
 
   saveNewImage() {

@@ -18,6 +18,7 @@ import { ProfileSettingsPage } from '../pages/profile/profile-settings/profile-s
 import { ListPage } from '../pages/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
+import { NutritionPage } from '../pages/nutrition/nutrition';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
 // Plugins
@@ -25,7 +26,6 @@ import { Facebook } from '@ionic-native/facebook';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Stepcounter } from '@ionic-native/stepcounter';
-import { Camera } from '@ionic-native/camera';
 
 // Services - Providers
 import { PlansProvider } from '../providers/plans/plans.provider';
@@ -41,6 +41,7 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     ListPage,
     PlansPage,
     PlansSettingsPage,
+    NutritionPage,
     StepcounterPage,
     ImageCropperComponent
   ],
@@ -61,6 +62,7 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     ListPage,
     PlansPage,
     PlansSettingsPage,
+    NutritionPage,
     StepcounterPage,
     ImageCropperComponent
   ],
