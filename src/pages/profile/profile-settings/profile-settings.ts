@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, NavController, NavParams  } from 'ionic-angular';
+import { AlertController, NavController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
 import { CropperSettings } from "ng2-img-cropper";
 // import * as firebase from 'firebase';
 
@@ -22,6 +22,8 @@ export class ProfileSettingsPage implements OnInit {
   constructor(
     public alertCtrl: AlertController,
     public navCtrl: NavController, 
+    public actionSheetCtrl: ActionSheetController,
+    public platform: Platform,
     public navParams: NavParams,
     public authProvider: AuthProvider,
     private uploadProvider: UploadProvider,
@@ -50,6 +52,40 @@ export class ProfileSettingsPage implements OnInit {
   }
 
   uploadImage() {
+    let chooseImage = this.actionSheetCtrl.create({
+      title: 'Profile picture',
+      buttons: [
+        {
+          text: 'Gallery',
+          icon: !this.platform.is('ios') ? 'image' : null,
+          handler: () => {
+            this.changingImageClick();
+          }
+        },{
+          text: 'Use camera',
+          icon: !this.platform.is('ios') ? 'camera' : null,
+          handler: () => {
+            this.takePicture();
+          }
+        },{
+          text: 'Delete picture',
+          icon: !this.platform.is('ios') ? 'trash' : null,
+          role: 'destructive',
+          handler: () => {
+            console.log('Delete clicked');
+          }
+        },{
+          text: 'Cancel',
+          icon: !this.platform.is('ios') ? 'close' : null,
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    chooseImage.present();
+    /*
     let alert = this.alertCtrl.create({
       title: 'Upload image disabled',
       message: 'Upload image is currently disabled.',
@@ -63,6 +99,7 @@ export class ProfileSettingsPage implements OnInit {
       ]
     });
     alert.present()
+    */
   }
 
   changingImageClick() {
@@ -70,6 +107,7 @@ export class ProfileSettingsPage implements OnInit {
   }
 
   takePicture() {
+     console.log('takePicture() is clicked');
     // this.cameraProvider.getPicture();
   }
 
