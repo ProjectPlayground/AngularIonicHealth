@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
+import { AlertController, NavController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
@@ -24,6 +24,7 @@ export class ProfilePage implements OnInit {
   // year: number = 1991;
 
   constructor(
+    public alertCtrl: AlertController,
     public navCtrl: NavController,
     public actionSheetCtrl: ActionSheetController, 
     public platform: Platform,
@@ -81,6 +82,10 @@ export class ProfilePage implements OnInit {
       this.day, 
       this.month, 
       this.gender);
+      let alert = this.alertCtrl.create({
+        title: 'Your settings are saved!'
+      });
+      alert.present();
   }
 
   goToSettings(): void {

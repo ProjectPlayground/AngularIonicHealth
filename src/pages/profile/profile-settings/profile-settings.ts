@@ -155,5 +155,9 @@ export class ProfileSettingsPage implements OnInit {
       this.stepcounter, 
       this.auto_updates, 
       this.share_data);
+      let alert = this.alertCtrl.create({
+        title: 'Your settings are saved!'
+      });
+      alert.present();
   }
 }

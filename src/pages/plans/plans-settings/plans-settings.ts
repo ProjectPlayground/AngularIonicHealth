@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams  } from 'ionic-angular';
+import { NavController, AlertController, NavParams  } from 'ionic-angular';
 import * as firebase from 'firebase';
 
 import { PlansProvider } from '../../../providers/plans/plans.provider';
@@ -17,7 +17,8 @@ export class PlansSettingsPage implements OnInit {
   other: boolean = false; 
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
+    public alertCtrl: AlertController,
     public navParams: NavParams,
     private plansProvider: PlansProvider) {
   }
@@ -39,6 +40,10 @@ export class PlansSettingsPage implements OnInit {
       this.cycling, 
       this.running, 
       this.other);
+      let alert = this.alertCtrl.create({
+        title: 'Your settings are saved!'
+      });
+      alert.present();
   }
 
 }
