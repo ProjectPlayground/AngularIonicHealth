@@ -52,14 +52,14 @@ export class ProfileSettingsPage implements OnInit {
 
   ngOnInit() {
     // getUserSettings
-    const dbRefUserInfo= firebase.database().ref().child(`userProfiles/${this.uid}/profile/settings`).once('value').then((snap) => {
+    firebase.database().ref().child(`userProfiles/${this.uid}/profile/settings`).once('value').then((snap) => {
       this.notifications = snap.val().notifications;
       this.extra_options = snap.val().extra_options;
       this.stepcounter = snap.val().stepcounter;
       this.auto_updates = snap.val().auto_updates;
       this.share_data = snap.val().share_data;
     });
-    
+
     /*
     this.uploadProvider.getProfileImage(this.user)
     .subscribe(image => {

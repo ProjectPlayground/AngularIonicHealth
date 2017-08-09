@@ -33,7 +33,7 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
     // getUserInfo
-    const dbRefUserInfo= firebase.database().ref().child(`userProfiles/${this.uid}/profile/info`).once('value').then((snap) => {
+    firebase.database().ref().child(`userProfiles/${this.uid}/profile/info`).once('value').then((snap) => {
       this.fitlevel = snap.val().fitlevel;
       this.height = snap.val().height;
       this.weight = snap.val().weight;
