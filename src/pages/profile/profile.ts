@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams  } from 'ionic-angular';
 import * as firebase from 'firebase';
 
@@ -12,7 +12,9 @@ import { ResetPasswordPage } from '../auth/reset-password/reset-password';
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
-export class ProfilePage {
+export class ProfilePage implements OnInit {
+  uid = firebase.auth().currentUser.uid;
+
   fitlevel: number = 1800;
   weight: number = 70;
   height: number = 180;
@@ -27,6 +29,18 @@ export class ProfilePage {
     public authProvider: AuthProvider,
     private usersProvider: UsersProvider) 
   {
+  }
+
+  ngOnInit() {
+    // getUserInfo
+    const dbRefUserInfo= firebase.database().ref().child(`userProfiles/${this.uid}/profile/info`).once('value').then((snap) => {
+      this.fitlevel = snap.val().fitlevel;
+      this.height = snap.val().height;
+      this.weight = snap.val().weight;
+      this.day = snap.val().day;
+      this.month = snap.val().month;
+      this.gender = snap.val().gender;
+    });
   }
 
   userEmail() {
