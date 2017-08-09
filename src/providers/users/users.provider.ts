@@ -20,4 +20,15 @@ export class UsersProvider {
     })
   }
 
+  updateUserSettings(uid, notifications, extra_options, stepcounter, auto_updates, share_data) {
+    return firebase.database().ref().child(`userProfiles/${this.uid}/profile/settings`)
+    .update({
+      notifications: notifications,
+      extra_options: extra_options,
+      stepcounter: stepcounter,
+      auto_updates: auto_updates,
+      share_data: share_data
+    })
+  }
+
 }

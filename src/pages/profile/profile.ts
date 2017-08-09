@@ -34,7 +34,14 @@ export class ProfilePage {
   }
 
   saveUserInfo(): void {
-    this.usersProvider.updateUserInfo(firebase.auth().currentUser.uid, this.fitlevel, this.height, this.weight, this.day, this.month, this.gender);
+    this.usersProvider.updateUserInfo(
+      firebase.auth().currentUser.uid, 
+      this.fitlevel, 
+      this.height, 
+      this.weight, 
+      this.day, 
+      this.month, 
+      this.gender);
   }
 
   goToSettings(): void {

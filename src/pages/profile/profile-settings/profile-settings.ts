@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
 import { CropperSettings } from "ng2-img-cropper";
-// import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../../providers/auth/auth.provider';
 import { UploadProvider } from '../../../providers/upload/upload.provider';
 // import { CameraProvider } from '../../../providers/camera/camera.provider';
+import { UsersProvider } from '../../../providers/users/users.provider';
 
 @Component({
   selector: 'page-profile-settings',
@@ -16,8 +17,13 @@ export class ProfileSettingsPage implements OnInit {
   cropperSettings: CropperSettings;
 
   changingImage: boolean; 
-  notifications: any = 'enable';
   user: any;
+
+  notifications: any = 'enable';
+  extra_options: boolean = false; 
+  stepcounter: boolean = false; 
+  auto_updates: boolean = false; 
+  share_data: boolean = true; 
 
   constructor(
     public alertCtrl: AlertController,
@@ -27,7 +33,8 @@ export class ProfileSettingsPage implements OnInit {
     public navParams: NavParams,
     public authProvider: AuthProvider,
     private uploadProvider: UploadProvider,
-    // private cameraProvider: CameraProvider
+    // private cameraProvider: CameraProvider,
+    private usersProvider: UsersProvider
   ) 
   {
     this.cropperSettings = new CropperSettings();
@@ -118,4 +125,13 @@ export class ProfileSettingsPage implements OnInit {
     this.changingImage = false;
   }
 
+  saveUserSettings(){
+    this.usersProvider.updateUserSettings(
+      firebase.auth().currentUser.uid, 
+      this.notifications, 
+      this.extra_options, 
+      this.stepcounter, 
+      this.auto_updates, 
+      this.share_data);
+  }
 }
