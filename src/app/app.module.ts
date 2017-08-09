@@ -31,6 +31,7 @@ import { Stepcounter } from '@ionic-native/stepcounter';
 import { PlansProvider } from '../providers/plans/plans.provider';
 import { UploadProvider } from '../providers/upload/upload.provider';
 import { CameraProvider } from '../providers/camera/camera.provider';
+import { UsersProvider } from '../providers/users/users.provider';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { CameraProvider } from '../providers/camera/camera.provider';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlansProvider,
     UploadProvider,
-    CameraProvider
+    CameraProvider,
+    UsersProvider
   ]
 })
 export class AppModule {}
