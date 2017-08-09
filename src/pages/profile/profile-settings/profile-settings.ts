@@ -89,7 +89,11 @@ export class ProfileSettingsPage implements OnInit {
           icon: !this.platform.is('ios') ? 'trash' : null,
           role: 'destructive',
           handler: () => {
-            console.log('Delete clicked');
+            this.deleteProfileImage();
+            let alert = this.alertCtrl.create({
+              title: 'Profile image is deleted'
+            });
+            alert.present()
           }
         },{
           text: 'Cancel',
@@ -128,11 +132,19 @@ export class ProfileSettingsPage implements OnInit {
     // this.cameraProvider.getPicture();
   }
 
-  saveNewImage() {
+  saveProfileImage() {
     if(this.data && this.data.image){
       this.uploadProvider.uploadProfileImage(this.user, this.data.image.split(/,(.+)/)[1])
      }
     this.changingImage = false;
+    let alert = this.alertCtrl.create({
+      title: 'Profile image is saved'
+    });
+    alert.present()
+  }
+
+  deleteProfileImage() {
+    this.uploadProvider.deleteProfileImage();
   }
 
   saveUserSettings(){

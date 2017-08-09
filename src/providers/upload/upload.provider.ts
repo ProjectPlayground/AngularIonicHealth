@@ -11,9 +11,9 @@ export class UploadProvider {
   
   uploadProfileImage(user, img) {
     let storageRef = firebase.storage().ref();
-
     let path = `/profile/${this.uid}`;
     var iRef = storageRef.child(path);
+
     iRef.putString(img, 'base64', {contentType: 'image/png'}).then((snapshot) => {
       console.log('Uploaded a blob or file! Now storing the reference at',`/profile/images/`);
       firebase.database().ref().child(`userProfiles/${this.uid}/profile/image`).update({ path: path, filename: this.uid })
@@ -42,5 +42,28 @@ export class UploadProvider {
 
     return resultSubject;
   }*/
+
+  getProfileImage(user): ReplaySubject<any>{
+
+    let resultSubject = new ReplaySubject(1);
+    let storageRef = firebase.storage().ref();
+    let path = `/profile/${this.uid}`;
+    var iRef = storageRef.child(path);
+     
+    iRef
+      .getDownloadURL()
+      .then(url => {
+        let result = {image: url, path: path, filename: this.uid};
+            console.log('two', result);
+            resultSubject.next(result);
+      })
+    
+    return resultSubject;
+  }
+
+  deleteProfileImage() {
+    firebase.storage().ref().child(`/profile/${this.uid}`).delete();
+    firebase.database().ref().child(`userProfiles/${this.uid}/profile/image`).remove();
+  }
 
 }

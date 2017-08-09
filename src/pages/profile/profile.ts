@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams  } from 'ionic-angular';
+import { NavController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../providers/auth/auth.provider';
@@ -24,7 +24,9 @@ export class ProfilePage implements OnInit {
   // year: number = 1991;
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
+    public actionSheetCtrl: ActionSheetController, 
+    public platform: Platform,
     public navParams: NavParams,
     public authProvider: AuthProvider,
     private usersProvider: UsersProvider) 
@@ -41,6 +43,29 @@ export class ProfilePage implements OnInit {
       this.month = snap.val().month;
       this.gender = snap.val().gender;
     });
+  }  
+  
+  changeImage() {
+    let chooseImage = this.actionSheetCtrl.create({
+      title: 'Profile picture',
+      buttons: [
+        {
+          text: 'Change profile picture',
+          icon: !this.platform.is('ios') ? 'settings' : null,
+          handler: () => {
+            this.goToSettings();
+          }
+        },{
+          text: 'Cancel',
+          icon: !this.platform.is('ios') ? 'close' : null,
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    chooseImage.present();
   }
 
   userEmail() {
