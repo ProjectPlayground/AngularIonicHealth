@@ -5,7 +5,7 @@ import * as firebase from 'firebase';
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
 import { ProfilePage } from '../profile/profile';
-import { PlansPage } from '../plans/plans';
+import { NutritionPage } from '../nutrition/nutrition';
 import { SigninPage } from '../auth/signin/signin';
 import { SignupPage } from '../auth/signup/signup';
 
@@ -41,7 +41,7 @@ export class HomePage {
   */
   
   // goTo() {this.navCtrl.push(ProfilePage);}
-  goTo() {this.navCtrl.push(PlansPage);}
+  goTo() {this.navCtrl.push(NutritionPage);}
   
   
   goToSignup() {
