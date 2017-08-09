@@ -1,6 +1,6 @@
 {
     "name": "ngx-ionic-health",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "author": "Jeroen Ouwehand",
     "description": "Angular Ionic App",
     "keywords": [
@@ -24,7 +24,6 @@
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve"
     },
-    "private": true,
     "dependencies": {
         "@angular/animations": "^4.3.2",
         "@angular/common": "^4.3.2",
