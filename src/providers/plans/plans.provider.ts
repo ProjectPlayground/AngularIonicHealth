@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
+import * as firebase from 'firebase';
 
 import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class PlansProvider {
+  uid: any = firebase.auth().currentUser.uid;
+
   headers: HttpHeaders;  
   options: any;
 
@@ -27,5 +30,15 @@ export class PlansProvider {
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg);
     return Observable.throw(errMsg);
+  }
+
+  updatePlanSettings(uid, strength_training, cycling, running, other) {
+    return firebase.database().ref().child(`userProfiles/${this.uid}/plans/settings`)
+    .update({
+      strength_training: strength_training,
+      cycling: cycling,
+      running: running,
+      other: other
+    })
   }
 }

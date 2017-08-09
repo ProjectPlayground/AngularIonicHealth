@@ -22,29 +22,17 @@
     </ion-fab-list>
   </ion-fab>
 
-  <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionInput)="getPlans($event)"></ion-searchbar>
 
-  <ion-card>    
-    <ion-card-header>
-      Lorem ipsum dolor 
-    </ion-card-header>
-
-    <ion-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Quisque semper condimentum dolor, non consequat diam varius vel. 
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>    
-    <ion-card-header>
-      Lorem ipsum dolor 
-    </ion-card-header>
-
-    <ion-card-content>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Quisque semper condimentum dolor, non consequat diam varius vel. 
-    </ion-card-content>
-  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let plan of plans">
+      <ion-thumbnail item-start>
+        <img src="http://via.placeholder.com/150x150">
+      </ion-thumbnail>
+      <h2>{{plan}}</h2>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
   <!--
   <ion-list>
     <button ion-item *ngFor="let plan of plans | async">

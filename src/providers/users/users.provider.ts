@@ -3,7 +3,7 @@ import * as firebase from 'firebase';
 
 @Injectable()
 export class UsersProvider {
-  public uid: any = firebase.auth().currentUser.uid;
+  uid: any = firebase.auth().currentUser.uid;
 
   constructor() {
   }

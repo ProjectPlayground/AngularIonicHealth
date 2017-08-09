@@ -12,13 +12,15 @@ import { PlansProvider } from '../../providers/plans/plans.provider';
   templateUrl: 'plans.html',
 })
 export class PlansPage {
-  plans: Observable<any>;
+  // plans: Observable<any>;
+  plans;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private plansProvider: PlansProvider) 
   {
-    this.plans = this.plansProvider.getAllPlans()
+    this.initializePlans();
+    // this.plans = this.plansProvider.getAllPlans()
       //.subscribe(plans => { 
       //  this.plans = plans; 
       //  console.log(plans); 
@@ -32,6 +34,28 @@ export class PlansPage {
   goToListPage() {
      this.navCtrl.push(ListPage);
   }
+  
+  initializePlans() {
+    this.plans = [
+      'Full body',
+      'Upper-lower',
+      'Push-pull',
+      '5x5',
+      'Strength',
+      'Conditioning',
+      'Cycling',
+      'Running'
+    ];
+  }
 
+  getPlans(ev) {
+    this.initializePlans();
+    var val = ev.target.value;
+    if (val && val.trim() != '') {
+      this.plans = this.plans.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
 }
 
