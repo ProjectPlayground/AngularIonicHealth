@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AlertController, NavController, ActionSheetController, Platform, NavParams } from 'ionic-angular';
+import { size } from "lodash";
 import * as firebase from 'firebase';
 
+import { FollowProvider } from '../../providers/follow/follow.provider';
 import { AuthProvider } from '../../providers/auth/auth.provider';
 import { UsersProvider } from '../../providers/users/users.provider';
 
@@ -13,7 +15,10 @@ import { ResetPasswordPage } from '../auth/reset-password/reset-password';
   templateUrl: 'profile.html',
 })
 export class ProfilePage implements OnInit {
-  uid = firebase.auth().currentUser.uid;
+  uid = firebase.auth().currentUser.uid;  
+   
+  followerCount: number;
+  followers;
 
   fitlevel: number = 1800;
   weight: number = 70;
@@ -30,7 +35,8 @@ export class ProfilePage implements OnInit {
     public platform: Platform,
     public navParams: NavParams,
     public authProvider: AuthProvider,
-    private usersProvider: UsersProvider) 
+    private usersProvider: UsersProvider,
+    private followProvider: FollowProvider) 
   {
   }
 
@@ -95,5 +101,5 @@ export class ProfilePage implements OnInit {
   goToResetPassword(): void {
      this.navCtrl.push(ResetPasswordPage); 
   }
-
+    
 }

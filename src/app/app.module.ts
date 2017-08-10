@@ -15,11 +15,12 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
 import { ProfileSettingsPage } from '../pages/profile/profile-settings/profile-settings';
-import { ListPage } from '../pages/list/list';
+import { ListPage } from '../pages/plans/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
 import { NutritionPage } from '../pages/nutrition/nutrition';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
+import { ExplorePage } from '../pages/explore/explore';
 
 // Plugins
 import { Facebook } from '@ionic-native/facebook';
@@ -47,6 +48,7 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     PlansSettingsPage,
     NutritionPage,
     StepcounterPage,
+    ExplorePage,
     ImageCropperComponent
   ],
   imports: [
@@ -68,6 +70,7 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     PlansSettingsPage,
     NutritionPage,
     StepcounterPage,
+    ExplorePage,
     ImageCropperComponent
   ],
   providers: [

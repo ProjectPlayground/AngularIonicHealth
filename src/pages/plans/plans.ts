@@ -3,7 +3,7 @@ import { NavController, NavParams  } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
 import { PlansSettingsPage } from './plans-settings/plans-settings';
-import { ListPage } from '../../pages/list/list';
+import { ListPage } from './list/list';
 
 import { PlansProvider } from '../../providers/plans/plans.provider';
 

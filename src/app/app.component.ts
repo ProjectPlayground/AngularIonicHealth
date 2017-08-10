@@ -15,6 +15,7 @@ import { SigninPage } from '../pages/auth/signin/signin';
 import { ProfilePage } from '../pages/profile/profile';
 import { PlansPage } from '../pages/plans/plans';
 import { NutritionPage } from '../pages/nutrition/nutrition';
+import { ExplorePage } from '../pages/explore/explore';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
 
@@ -42,6 +43,7 @@ export class MyApp implements OnInit {
       { title: 'Profile', component: ProfilePage },
       { title: 'Fitness plans', component: PlansPage },
       { title: 'Nutrition', component: NutritionPage },
+      { title: 'Explore', component: ExplorePage },
       { title: 'Steps', component: StepcounterPage }
     ];
 
