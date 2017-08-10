@@ -12,17 +12,21 @@
         Home
       </button>
 
-      <ng-template #signin>
+      <!--<ng-template #signin>
         <button menuClose ion-item (click)="signInPage()">
-          Signin
+          Sign in
         </button>
-      </ng-template>
+      </ng-template>-->
 
       <div *ngIf="authProvider.isAuthenticated(); else signin">
         <button menuClose ion-item *ngFor="let p of pages" (click)="openAuthPages(p)">
           {{p.title}}
         </button>
       </div>
+
+      <button menuClose ion-item (click)="onSignOut()">
+        Sign out
+      </button>
 
     </ion-list>
   </ion-content>

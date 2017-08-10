@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 
-import { Nav, Platform } from 'ionic-angular';
+import { AlertController, Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -33,7 +33,8 @@ export class MyApp implements OnInit {
     public platform: Platform, 
     public statusBar: StatusBar, 
     public splashScreen: SplashScreen,
-    public authProvider: AuthProvider) 
+    public authProvider: AuthProvider,
+    public alertCtrl: AlertController,) 
   {
     this.initializeApp();
 
@@ -66,6 +67,14 @@ export class MyApp implements OnInit {
   openAuthPages(page) {
     this.nav.setRoot(page.component);
   }
+
+  onSignOut() {
+     this.authProvider.logoutUser();
+     let alert = this.alertCtrl.create({
+      title: 'Logout is succesful!'
+    });
+    alert.present();
+  } 
 
   ngOnInit() {
     firebase.initializeApp({

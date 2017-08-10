@@ -21,7 +21,7 @@ export class PlansProvider {
   
   getAllPlans(): Observable<any> {
     return this.http
-      .get(`${this.baseUrl}/plans/testplan1` + ".json", this.options)
+      .get(`${this.baseUrl}/plans/testplan1` + `.json`, this.options)
       .catch(this.handleError);
   }  
 

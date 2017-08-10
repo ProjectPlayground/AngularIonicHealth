@@ -28,12 +28,12 @@
 <ion-content padding [ngSwitch]="nutrition">
 
   <ion-list *ngSwitchCase="'breakfast'">
-    <ion-item>
+    <ion-item *ngFor="let nutr of nutri">
       <ion-thumbnail item-start>
-        <img src="assets/img/2.jpg">
+        <img src="http://via.placeholder.com/150x150">
       </ion-thumbnail>
-      <h2>Title</h2>
-      <p>Content</p>
+      <h2>{{nutr.title}}</h2>
+      <p>{{nutr.content}}</p>
       <button ion-button clear item-end>View</button>
     </ion-item>
   </ion-list>
@@ -56,6 +56,7 @@
       <p>Content2</p>
       <button ion-button clear item-end>View</button>
     </ion-item>
+
   </ion-list>
 
   <ion-list *ngSwitchCase="'dinner'">

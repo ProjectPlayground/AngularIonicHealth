@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar color="primary">
-    <button ion-button menuToggle>
+    <button ion-button menuToggle *ngIf="authProvider.isAuthenticated();">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
@@ -46,4 +46,5 @@
   </ion-card>
   
   <button ion-button block (click)="goTo()">My nutrition</button>
+  <a ion-button block color="secondary" href="http://github.com/jeroenouw/AngularIonicHealth" target="_blank">Fork me on github</a>
 </ion-content>

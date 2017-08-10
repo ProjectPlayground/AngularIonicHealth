@@ -7,7 +7,8 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class NutritionProvider {
-  uid: any = firebase.auth().currentUser.uid;
+  // uid = firebase.auth().currentUser.uid;
+  nutritionId: any;
 
   headers: HttpHeaders;  
   options: any;
@@ -21,15 +22,16 @@ export class NutritionProvider {
   
   getAllNutrition(): Observable<any> {
     return this.http
-      .get(`${this.baseUrl}/nutrition` + ".json", this.options)
+      .get(`${this.baseUrl}/nutrition/` + `-KqakOJ5qlwbbfBF59Z0`  + `.json`, this.options)
       .catch(this.handleError);
   }  
   
+  /*
   getUserNutrition(): Observable<any> {
     return this.http
-      .get(`${this.baseUrl}/userProfiles/${this.uid}/nutrition` + ".json", this.options)
+      .get(`${this.baseUrl}/userProfiles/${this.uid}/nutrition` + `.json`, this.options)
       .catch(this.handleError);
-  }  
+  }  */
 
   private handleError (error: any) {
     const errMsg = (error.message) ? error.message :
@@ -37,5 +39,16 @@ export class NutritionProvider {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+  
+  /*
+  updateNutritionTest(uid, image, title, content) {
+    return firebase.database().ref().child(`nutrition/${this.nutritionId}`)
+    .update({
+      image: image,
+      title: title,
+      content: content
+    })
+  }
+  */
 
 }
