@@ -38,8 +38,8 @@ export class HomePage {
     }
   }*/
   
-  goTo() {this.navCtrl.push(ProfilePage);}
-  // goTo() {this.navCtrl.push(NutritionPage);}
+  // goTo() {this.navCtrl.push(ProfilePage);}
+  goTo() {this.navCtrl.push(NutritionPage);}
   
   
   goToSignup() {

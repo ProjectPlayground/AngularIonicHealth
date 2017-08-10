@@ -33,6 +33,7 @@ import { PlansProvider } from '../providers/plans/plans.provider';
 import { UploadProvider } from '../providers/upload/upload.provider';
 import { CameraProvider } from '../providers/camera/camera.provider';
 import { UsersProvider } from '../providers/users/users.provider';
+import { NutritionProvider } from '../providers/nutrition/nutrition.provider';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { UsersProvider } from '../providers/users/users.provider';
     PlansProvider,
     UploadProvider,
     CameraProvider,
-    UsersProvider
+    UsersProvider,
+    NutritionProvider
   ]
 })
 export class AppModule {}
