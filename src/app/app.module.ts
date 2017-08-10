@@ -26,6 +26,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Stepcounter } from '@ionic-native/stepcounter';
+import { CameraPreview } from '@ionic-native/camera-preview';
 
 // Services - Providers
 import { PlansProvider } from '../providers/plans/plans.provider';
@@ -72,6 +73,7 @@ import { UsersProvider } from '../providers/users/users.provider';
     StatusBar,
     SplashScreen,
     Stepcounter,
+    CameraPreview,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlansProvider,
     UploadProvider,

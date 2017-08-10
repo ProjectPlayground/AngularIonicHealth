@@ -1,31 +1,78 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview';
 
 @Injectable()
 export class CameraProvider {
+  picture: any;
 
   constructor(
-    public http: HttpClient,/*
-    private camera: Camera,
-    private options: CameraOptions*/) 
-  {/*
-    this.options = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    */
+    private cameraPreview: CameraPreview) 
+  { 
   }
   
+  cameraOptions() {
+     const cameraPreviewOpts: CameraPreviewOptions = {
+      x: 0,
+      y: 0,
+      width: window.screen.width,
+      height: window.screen.height,
+      camera: 'rear',
+      tapPhoto: true,
+      previewDrag: true,
+      toBack: true,
+      alpha: 1
+    };
+  }  
+
+  pictureOptions() {
+    const pictureOpts: CameraPreviewPictureOptions = {
+      width: 1280,
+      height: 1280,
+      quality: 85
+    }
+  }
+
+  startCamera() {
+    this.cameraPreview.startCamera(this.cameraOptions)
+    .then(
+      (res) => {
+        console.log(res)
+      },
+      (err) => {
+        console.log(err)
+      });
+  }
+
   /*
-  getPicture() {
-    this.camera.getPicture(this.options)
-      .then((imageData) => {
-         let base64Image = 'data:image/jpeg;base64,' + imageData;
-    }, (err) => {
+  setHandler() {
+    this.cameraPreview.setOnPictureTakenHandler()
+    .subscribe((result) => {
+      console.log(result);
     });
-  }*/
+  }
+  */
+
+    
+  takePicture() {
+    this.cameraPreview.takePicture(this.pictureOptions)
+    .then((imageData) => {
+      this.picture = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      console.log(err);
+      this.picture = 'assets/img/test.jpg';
+    });
+  }
+    
+  switchCamera() {
+    this.cameraPreview.switchCamera();
+  }
+   
+  negativeCamera() {
+    this.cameraPreview.setColorEffect('negative');
+  }
+    
+  stopCamera(){
+    this.cameraPreview.stopCamera();
+  }
   
 }
