@@ -23,20 +23,6 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
-.blurry-background {
-  img {
-      width: auto;
-      height: auto;
-      min-width: 100%;
-      min-height: 100%;
-      -webkit-filter: blur(2px);
-      -moz-filter: blur(2px);
-      -o-filter: blur(2px);
-      -ms-filter: blur(2px);
-      filter: blur(2px);
-  }
-}
-
 
 // Named Color Variables
 // --------------------------------------------------
@@ -51,7 +37,8 @@ $colors: (
   secondary:  #333333,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  facebook:   #4267b2, 
 );
 
 

@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+
   <form [formGroup]="loginForm" (submit)="signInUser()" novalidate>
 
     <ion-item>
@@ -31,10 +32,16 @@
     </ion-item>
 
     <button ion-button block type="submit" [disabled]="!loginForm.valid">
-      Login
+      Login with email
     </button>
 
   </form>
+
+  <button ion-button block color="facebook" (click)="signInWithFacebook()">
+    Login with Facebook
+  </button>
+
+  <hr>
 
   <button ion-button block clear (click)="goToSignup()">
     Create a new account
@@ -43,32 +50,5 @@
   <button ion-button block clear (click)="goToResetPassword()">
     I forgot my password
   </button>
-
-  <!--
-  <h3>
-    Social login
-  </h3>
-  <h5>
-    (Not available now)
-  </h5>
-
-    <hr>
-
-    <button ion-button block (click)="signInWithFacebook()">
-      Login with Facebook
-    </button>
-
-  <ion-card *ngIf="userProfile">
-    <img [src]="userProfile.photoURL"/>
-    <ion-card-content>
-      <ion-card-title>
-        {{ userProfile.displayName }}
-      </ion-card-title>
-      <p>
-        The UID for this new user is {{userProfile.uid}} and the email is {{userProfile.email}}
-      </p>
-    </ion-card-content>
-  </ion-card>
-  -->
 
 </ion-content>

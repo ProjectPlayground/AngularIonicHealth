@@ -19,7 +19,7 @@ export class CameraProvider {
       camera: 'rear',
       tapPhoto: true,
       previewDrag: true,
-      toBack: true,
+      toBack: false,
       alpha: 1
     };
   }  

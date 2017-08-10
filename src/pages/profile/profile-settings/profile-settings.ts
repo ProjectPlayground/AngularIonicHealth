@@ -5,7 +5,7 @@ import * as firebase from 'firebase';
 
 import { AuthProvider } from '../../../providers/auth/auth.provider';
 import { UploadProvider } from '../../../providers/upload/upload.provider';
-// import { CameraProvider } from '../../../providers/camera/camera.provider';
+import { CameraProvider } from '../../../providers/camera/camera.provider';
 import { UsersProvider } from '../../../providers/users/users.provider';
 
 @Component({
@@ -34,7 +34,7 @@ export class ProfileSettingsPage implements OnInit {
     public navParams: NavParams,
     public authProvider: AuthProvider,
     private uploadProvider: UploadProvider,
-    // private cameraProvider: CameraProvider,
+    private cameraProvider: CameraProvider,
     private usersProvider: UsersProvider
   ) 
   {
@@ -128,8 +128,8 @@ export class ProfileSettingsPage implements OnInit {
   }
 
   takePicture() {
-     console.log('takePicture() is clicked');
-    // this.cameraProvider.getPicture();
+    console.log('takePicture() is clicked');
+    this.cameraProvider.startCamera();
   }
 
   saveProfileImage() {

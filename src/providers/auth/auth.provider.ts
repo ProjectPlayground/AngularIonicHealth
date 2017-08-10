@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-// import { Facebook } from '@ionic-native/facebook';
 
 @Injectable()
 export class AuthProvider {
@@ -25,17 +24,20 @@ export class AuthProvider {
       );
   }
 
-  signInWithFacebook(){
+  signInWithFacebook(): firebase.Promise<any>{
     const providerFacebook = new firebase.auth.FacebookAuthProvider();
-      firebase.auth().signInWithPopup(providerFacebook)
-        .then(
-          response => {
-            this.getIdToken;
-          }
-        )
-        .catch((error) => {
-          error => console.log(error)
-        });
+    return firebase.auth().signInWithPopup(providerFacebook)
+      .then(
+        response => {
+          firebase.auth().currentUser.getIdToken()
+          .then(
+              (token: string) => this.token = token
+          );
+        }
+      )
+      .catch((error) => {
+        error => console.log(error)
+      });
   }
 
   signUpUser(email: string, password: string): firebase.Promise<any> {
