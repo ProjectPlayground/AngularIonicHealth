@@ -18,7 +18,6 @@ import { NutritionPage } from '../pages/nutrition/nutrition';
 import { ExplorePage } from '../pages/explore/explore';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -40,11 +39,11 @@ export class MyApp implements OnInit {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Profile', component: ProfilePage },
+      { title: 'Your profile', component: ProfilePage },
       { title: 'Fitness plans', component: PlansPage },
       { title: 'Nutrition', component: NutritionPage },
-      { title: 'Explore', component: ExplorePage },
-      { title: 'Steps', component: StepcounterPage }
+      { title: 'Explore others', component: ExplorePage },
+      { title: 'Stepcounter', component: StepcounterPage }
     ];
 
   }
@@ -71,7 +70,8 @@ export class MyApp implements OnInit {
   }
 
   onSignOut() {
-     this.authProvider.logoutUser();
+    this.authProvider.logoutUser();
+    this.nav.setRoot(HomePage);
      let alert = this.alertCtrl.create({
       title: 'Logout is succesful!'
     });

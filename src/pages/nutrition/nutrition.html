@@ -27,47 +27,49 @@
 
 <ion-content padding [ngSwitch]="nutrition">
 
-  <ion-list *ngSwitchCase="'breakfast'">
-    <ion-item *ngFor="let nutr of nutri">
-      <ion-thumbnail item-start>
-        <img src="http://via.placeholder.com/150x150">
-      </ion-thumbnail>
-      <h2>{{nutr.title}}</h2>
-      <p>{{nutr.content}}</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
-  </ion-list>
+  <ion-card>
+    <ion-list *ngSwitchCase="'breakfast'">
+      <ion-item *ngFor="let nutr of nutri">
+        <ion-thumbnail item-start>
+          <img src="http://via.placeholder.com/150x150">
+        </ion-thumbnail>
+        <h2>{{nutr.title}}</h2>
+        <p>{{nutr.content}}</p>
+        <button ion-button clear item-end>View</button>
+      </ion-item>
+    </ion-list>
 
-  <ion-list *ngSwitchCase="'lunch'">
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/img/7.jpg">
-      </ion-thumbnail>
-      <h2>Title</h2>
-      <p>Content</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
+    <ion-list *ngSwitchCase="'lunch'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/7.jpg">
+        </ion-thumbnail>
+        <h2>Title</h2>
+        <p>Content</p>
+        <button ion-button clear item-end>View</button>
+      </ion-item>
 
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/img/3.jpg">
-      </ion-thumbnail>
-      <h2>Title2</h2>
-      <p>Content2</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/3.jpg">
+        </ion-thumbnail>
+        <h2>Title2</h2>
+        <p>Content2</p>
+        <button ion-button clear item-end>View</button>
+      </ion-item>
 
-  </ion-list>
+    </ion-list>
 
-  <ion-list *ngSwitchCase="'dinner'">
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/img/5.jpg">
-      </ion-thumbnail>
-      <h2>Title</h2>
-      <p>Content</p>
-      <button ion-button clear item-end>View</button>
-    </ion-item>
-  </ion-list>
+    <ion-list *ngSwitchCase="'dinner'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/5.jpg">
+        </ion-thumbnail>
+        <h2>Title</h2>
+        <p>Content</p>
+        <button ion-button clear item-end>View</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 
 </ion-content>

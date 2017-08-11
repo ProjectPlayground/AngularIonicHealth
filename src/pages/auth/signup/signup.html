@@ -35,5 +35,12 @@
     <button ion-button block type="submit" [disabled]="!signupForm.valid">
       Create an Account
     </button>
-  </form>
+  </form>  
+  
+  <hr>
+
+  <button ion-button block clear (click)="goToSignin()">
+    Already have an account
+  </button>
+
 </ion-content>

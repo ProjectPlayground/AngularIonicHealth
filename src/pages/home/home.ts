@@ -25,7 +25,7 @@ export class HomePage {
   userEmail() {
     return firebase.auth().currentUser.email;
   }
-  /*
+ 
   goTo() {
     if (this.isAuthenticated()) {
       return this.navCtrl.push(ProfilePage);
@@ -36,9 +36,9 @@ export class HomePage {
       });
       alert.present();
     }
-  }*/
+  }
   
-  goTo() {this.navCtrl.push(ProfilePage);}
+  // goTo() {this.navCtrl.push(ProfilePage);}
   // goTo() {this.navCtrl.push(NutritionPage);}
   
   

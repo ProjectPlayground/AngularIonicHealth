@@ -54,6 +54,10 @@ export class SignupPage {
       this.loading = this.loadingCtrl.create();
       this.loading.present();
     }
+  }  
+
+  goToSignin(): void { 
+    this.navCtrl.push(SigninPage); 
   }
 
 }

@@ -5,16 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { ImageCropperComponent } from "ng2-img-cropper";
 
 // Modules
 import { AuthModule } from '../pages/auth/auth.module';
+import { ProfileModule } from '../pages/profile/profile.module';
 
 // Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ProfilePage } from '../pages/profile/profile';
-import { ProfileSettingsPage } from '../pages/profile/profile-settings/profile-settings';
 import { ListPage } from '../pages/plans/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
@@ -41,15 +39,12 @@ import { FollowProvider } from '../providers/follow/follow.provider';
   declarations: [
     MyApp,
     HomePage,
-    ProfilePage,
-    ProfileSettingsPage,
     ListPage,
     PlansPage,
     PlansSettingsPage,
     NutritionPage,
     StepcounterPage,
-    ExplorePage,
-    ImageCropperComponent
+    ExplorePage
   ],
   imports: [
     BrowserModule,
@@ -57,21 +52,19 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     FormsModule,
     IonicImageViewerModule,
     IonicModule.forRoot(MyApp),
-    AuthModule
+    AuthModule,
+    ProfileModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ProfilePage,
-    ProfileSettingsPage,
     ListPage,
     PlansPage,
     PlansSettingsPage,
     NutritionPage,
     StepcounterPage,
-    ExplorePage,
-    ImageCropperComponent
+    ExplorePage
   ],
   providers: [
     Facebook,

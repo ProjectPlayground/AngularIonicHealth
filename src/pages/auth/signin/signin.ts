@@ -84,7 +84,6 @@ export class SigninPage {
       this.loading.present();
   }
   
-  
   goToSignup(): void { 
     this.navCtrl.push(SignupPage); 
   }
