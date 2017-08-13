@@ -20,33 +20,22 @@
           <img src="http://via.placeholder.com/150x150">
         </ion-thumbnail>
         <ion-label>Tester 15</ion-label>
+        <!--
+        <div *ngIf="isFollowing; then unfollowButton else followButton">
+            button renders here
+        </div>
+          -->
         <button ion-button item-end color="primary">Follow (23)</button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="http://via.placeholder.com/150x150">
-        </ion-thumbnail>
-        <ion-label>Tester 22</ion-label>
-        <button ion-button item-end color="secondary">Unfollow (8)</button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="http://via.placeholder.com/150x150">
-        </ion-thumbnail>
-        <ion-label>Tester 14</ion-label>
-        <button ion-button item-end color="primary">Follow (67)</button>
-      </ion-item>
-
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="http://via.placeholder.com/150x150">
-        </ion-thumbnail>
-        <ion-label>Tester 37</ion-label>
-        <button ion-button item-end color="primary">Follow (18)</button>
       </ion-item>
     </ion-list>
   </ion-card>
+
+  <ng-template #followButton>
+    <button ion-button block color="secondary" (click)="toggleFollow()">Follow</button>
+  </ng-template>
+
+  <ng-template #unfollowButton>
+    <button ion-button block color="primary" (click)="toggleFollow()">Unfollow</button>
+  </ng-template>
 
 </ion-content>

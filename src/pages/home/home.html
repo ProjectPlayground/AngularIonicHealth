@@ -34,6 +34,9 @@
       Angular Ionic Health App
     </ion-card-header>
     <ion-card-content>
+      <div *ngFor="let user of users | async">
+        <page-explore [user]="user" [currentUser]="currentUser"></page-explore>
+      </div>
       Work in progress. Feel free to download, clone, share, fork etc. this project. <br/><br/>
       Quisque semper condimentum dolor, non consequat diam varius vel. 
       Maecenas ut elit a velit consequat mollis ac nec ipsum. Fusce vel malesuada mauris. 

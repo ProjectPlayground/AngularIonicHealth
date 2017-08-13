@@ -10,6 +10,13 @@ import { FollowProvider } from '../../providers/follow/follow.provider';
   templateUrl: 'explore.html',
 })
 export class ExplorePage implements OnInit, OnDestroy {
+  uid: any = firebase.auth().currentUser.uid;
+  key: any = firebase.database().ref(); ////////////////////////////
+
+  basePath = `userProfiles/${this.uid}/profile`;
+
+  @Input() user;
+  @Input() currentUser; 
   
   followerCount: number;
   isFollowing: boolean;
@@ -27,12 +34,38 @@ export class ExplorePage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    const userId = this.user.$key
+    const currentUserId = firebase.auth().currentUser.uid;
 
+    this.followProvider.getFollowers;
+    this.followProvider.getFollowing;
+
+  }
+
+  private countFollowers(followers) {
+    if (followers.$value === null) { 
+      return 0
+    } else { 
+      return size(followers) 
+    }
+  }
+    
+  toggleFollow() {
+    const userId = this.user.$key
+    const currentUserId = this.currentUser.uid
+
+    if (this.isFollowing) { 
+      this.followProvider.unfollow(currentUserId, userId) 
+    } else { 
+      this.followProvider.follow(currentUserId, userId) 
+    }
   }
 
   ngOnDestroy() {
-
+    this.followers.unsubscribe()
+    this.following.unsubscribe()
   }
+
 
 
 }
