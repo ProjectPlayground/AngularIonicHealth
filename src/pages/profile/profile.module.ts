@@ -4,7 +4,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { ProfilePage } from './profile';
 import { ProfileSettingsPage } from './profile-settings/profile-settings';
-import { PublicProfilePage } from './public-profile/public-profile';
 
 import { ImageCropperComponent } from "ng2-img-cropper";
 
@@ -12,7 +11,6 @@ import { ImageCropperComponent } from "ng2-img-cropper";
   declarations: [
     ProfilePage,
     ProfileSettingsPage,
-    PublicProfilePage,
     ImageCropperComponent
   ],
   imports: [
@@ -23,7 +21,6 @@ import { ImageCropperComponent } from "ng2-img-cropper";
   entryComponents: [
     ProfilePage,
     ProfileSettingsPage,
-    PublicProfilePage,
     ImageCropperComponent
   ],
   providers: [

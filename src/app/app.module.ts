@@ -20,6 +20,7 @@ import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings'
 import { NutritionPage } from '../pages/nutrition/nutrition';
 import { StepcounterPage } from '../pages/stepcounter/stepcounter';
 import { ExplorePage } from '../pages/explore/explore';
+import { PublicProfilePage } from '../pages/explore/public-profile/public-profile';
 
 // Plugins
 import { Facebook } from '@ionic-native/facebook';
@@ -46,7 +47,8 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     PlansSettingsPage,
     NutritionPage,
     StepcounterPage,
-    ExplorePage
+    ExplorePage,
+    PublicProfilePage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     PlansSettingsPage,
     NutritionPage,
     StepcounterPage,
-    ExplorePage
+    ExplorePage,
+    PublicProfilePage
   ],
   providers: [
     Facebook,

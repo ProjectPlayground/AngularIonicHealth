@@ -5,6 +5,8 @@ import * as firebase from 'firebase';
 
 import { FollowProvider } from '../../providers/follow/follow.provider';
 
+import { PublicProfilePage } from './public-profile/public-profile';
+
 @Component({
   selector: 'page-explore',
   templateUrl: 'explore.html',
@@ -61,6 +63,10 @@ export class ExplorePage implements OnInit, OnDestroy {
       this.followProvider.follow(currentUserId, userId) 
     }
   }*/
+
+  goToPublicProfile() {
+     this.navCtrl.push(PublicProfilePage);
+  }
 
   ngOnDestroy() {
     // this.followers.unsubscribe()

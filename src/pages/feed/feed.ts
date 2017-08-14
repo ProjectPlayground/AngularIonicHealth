@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavParams, NavController } from 'ionic-angular';
 
+import { PublicProfilePage } from '../explore/public-profile/public-profile';
+
 @Component({
   selector: 'page-feed',
   templateUrl: 'feed.html',
@@ -22,5 +24,8 @@ export class FeedPage {
     }, 2000);
   }
 
+  goToPublicProfile() {
+     this.navCtrl.push(PublicProfilePage);
+  }
 
 }
