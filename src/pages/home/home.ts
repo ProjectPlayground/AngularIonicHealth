@@ -5,7 +5,7 @@ import * as firebase from 'firebase';
 import { AuthProvider } from '../../providers/auth/auth.provider';
 
 import { ProfilePage } from '../profile/profile';
-import { NutritionPage } from '../nutrition/nutrition';
+import { FeedPage } from '../feed/feed';
 import { SigninPage } from '../auth/signin/signin';
 import { SignupPage } from '../auth/signup/signup';
 
@@ -25,7 +25,7 @@ export class HomePage {
   userEmail() {
     return firebase.auth().currentUser.email;
   }
- 
+   /*
   goTo() {
     if (this.isAuthenticated()) {
       return this.navCtrl.push(ProfilePage);
@@ -37,9 +37,9 @@ export class HomePage {
       alert.present();
     }
   }
-  
+  */
   // goTo() {this.navCtrl.push(ProfilePage);}
-  // goTo() {this.navCtrl.push(NutritionPage);}
+  goTo() {this.navCtrl.push(FeedPage);}
   
   
   goToSignup() {
@@ -49,14 +49,6 @@ export class HomePage {
   goToSignin() {
      this.navCtrl.push(SigninPage);
   }
-
-  onSignOut() {
-     this.authProvider.logoutUser();
-     let alert = this.alertCtrl.create({
-      title: 'Logout is succesful!'
-    });
-    alert.present();
-  } 
 
   isAuthenticated() {
     return this.authProvider.isAuthenticated();

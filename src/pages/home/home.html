@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header *ngIf="authProvider.isAuthenticated();">
   <ion-navbar color="primary">
-    <button ion-button menuToggle *ngIf="authProvider.isAuthenticated();">
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Health App</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,42 +12,17 @@
 </ion-content>
 
 <ion-content padding>
-  <ion-fab top right edge>
-    <button ion-fab mini color="secondary"><ion-icon name="more"></ion-icon></button>
-    <ion-fab-list>
-      <div *ngIf="!authProvider.isAuthenticated(); else loggedin">
-        <button ion-fab (click)="goToSignin()"><ion-icon name="log-in"></ion-icon></button>
-        <button ion-fab (click)="goToSignup()"><ion-icon name="person-add"></ion-icon></button>
-      </div>
-      <ng-template #loggedin>
-        <button ion-fab (click)="onSignOut()"><ion-icon name="log-out"></ion-icon></button>
-      </ng-template>
-    </ion-fab-list>
-  </ion-fab>
 
   <div *ngIf="authProvider.isAuthenticated();">
     <h6>Welcome {{userEmail()}}!</h6>
   </div>
-
-  <ion-card>
-    <ion-card-header>
-      Angular Ionic Health App
-    </ion-card-header>
-    <ion-card-content>
-      <div *ngFor="let user of users | async">
-        <page-explore [user]="user" [currentUser]="currentUser"></page-explore>
-      </div>
-      Work in progress. Feel free to download, clone, share, fork etc. this project. <br/><br/>
-      Quisque semper condimentum dolor, non consequat diam varius vel. 
-      Maecenas ut elit a velit consequat mollis ac nec ipsum. Fusce vel malesuada mauris. 
-      Vivamus vel odio in diam aliquet vehicula et in erat. Pellentesque at tellus sit amet massa tincidunt gravida.
-      Mauris ac lacus ex. Vivamus eget justo vestibulum, dignissim orci ac, auctor lectus. 
-      Maecenas placerat mauris id purus sodales, non pulvinar risus elementum. Donec euismod tortor quis hendrerit pellentesque. 
-      Aliquam bibendum condimentum libero, eget blandit felis suscipit ac. Proin eu pretium tortor, et luctus tortor. 
-      Proin porta dapibus ligula sed elementum. Suspendisse venenatis egestas ultrices.
-    </ion-card-content>
-  </ion-card>
   
-  <button ion-button block (click)="goTo()">My profile</button>
-  <a ion-button block color="secondary" href="http://github.com/jeroenouw/AngularIonicHealth" target="_blank">Fork me on github</a>
+  <div *ngIf="!authProvider.isAuthenticated();">
+    <h1>Welcome to Health App</h1>
+    <button ion-button block color="primary" (click)="goToSignup()">Create an account</button>
+    <button ion-button block color="primary" (click)="goToSignin()">Login with an account</button>
+    <br/><br/>
+    <button ion-button block color="secondary" (click)="goTo()">My feed</button>
+    <a ion-button block color="secondary" href="http://github.com/jeroenouw/AngularIonicHealth" target="_blank">Fork me on github</a>
+  </div>
 </ion-content>
