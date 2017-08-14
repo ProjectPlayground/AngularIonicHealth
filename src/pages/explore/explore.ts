@@ -34,7 +34,7 @@ export class ExplorePage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const userId = this.user.$key
+    // const userId = this.user.$key
     const currentUserId = firebase.auth().currentUser.uid;
 
     this.followProvider.getFollowers;
@@ -49,7 +49,8 @@ export class ExplorePage implements OnInit, OnDestroy {
       return size(followers) 
     }
   }
-    
+  
+  /*
   toggleFollow() {
     const userId = this.user.$key
     const currentUserId = this.currentUser.uid
@@ -59,11 +60,11 @@ export class ExplorePage implements OnInit, OnDestroy {
     } else { 
       this.followProvider.follow(currentUserId, userId) 
     }
-  }
+  }*/
 
   ngOnDestroy() {
-    this.followers.unsubscribe()
-    this.following.unsubscribe()
+    // this.followers.unsubscribe()
+    // this.following.unsubscribe()
   }
 
 

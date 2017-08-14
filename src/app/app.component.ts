@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { SigninPage } from '../pages/auth/signin/signin';
 
 // Authenticated pages
+import { FeedPage } from '../pages/feed/feed';
 import { ProfilePage } from '../pages/profile/profile';
 import { PlansPage } from '../pages/plans/plans';
 import { NutritionPage } from '../pages/nutrition/nutrition';
@@ -39,6 +40,7 @@ export class MyApp implements OnInit {
     this.initializeApp();
 
     this.pages = [
+      { title: 'Feed', component: FeedPage },
       { title: 'Your profile', component: ProfilePage },
       { title: 'Fitness plans', component: PlansPage },
       { title: 'Nutrition', component: NutritionPage },

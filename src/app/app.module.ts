@@ -13,6 +13,7 @@ import { ProfileModule } from '../pages/profile/profile.module';
 // Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { FeedPage } from '../pages/feed/feed';
 import { ListPage } from '../pages/plans/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
@@ -39,6 +40,7 @@ import { FollowProvider } from '../providers/follow/follow.provider';
   declarations: [
     MyApp,
     HomePage,
+    FeedPage,
     ListPage,
     PlansPage,
     PlansSettingsPage,
@@ -59,6 +61,7 @@ import { FollowProvider } from '../providers/follow/follow.provider';
   entryComponents: [
     MyApp,
     HomePage,
+    FeedPage,
     ListPage,
     PlansPage,
     PlansSettingsPage,
