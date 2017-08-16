@@ -40,11 +40,11 @@ export class MyApp implements OnInit {
     this.initializeApp();
 
     this.pages = [
-      { title: 'Feed', component: FeedPage },
-      { title: 'Your profile', component: ProfilePage },
+      { title: 'The feed', component: FeedPage },
+      { title: 'My profile', component: ProfilePage },
+      { title: 'Explore others', component: ExplorePage },
       { title: 'Fitness plans', component: PlansPage },
       { title: 'Nutrition', component: NutritionPage },
-      { title: 'Explore others', component: ExplorePage },
       { title: 'Stepcounter', component: StepcounterPage }
     ];
 

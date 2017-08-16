@@ -37,11 +37,20 @@ export class ExplorePage implements OnInit, OnDestroy {
 
   ngOnInit() {
     // const userId = this.user.$key
-    const currentUserId = firebase.auth().currentUser.uid;
+    // const currentUserId = firebase.auth().currentUser.uid;
 
-    this.followProvider.getFollowers;
-    this.followProvider.getFollowing;
+    // this.followProvider.getFollowers;
+    // this.followProvider.getFollowing;
 
+  }
+  
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
   }
 
   private countFollowers(followers) {
