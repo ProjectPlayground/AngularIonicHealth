@@ -42,7 +42,11 @@ export class HomePage {
   // goTo() {this.navCtrl.push(ProfilePage);}
   // goTo() {this.navCtrl.push(ExplorePage);}
   // goTo() {this.navCtrl.push(FeedPage);}
+    
   
+  goToProfile() {
+    this.navCtrl.push(ProfilePage);
+ }
   
   goToSignup() {
      this.navCtrl.push(SignupPage);

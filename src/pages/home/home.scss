@@ -12,4 +12,16 @@ page-home {
     h1, h6{
         text-align: center;
     }
+
+    ion-thumbnail {
+        img {
+            float: right;
+            margin: 0px 3px;
+            width: 42px;
+            height: 42px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+        }
+    }
 }
