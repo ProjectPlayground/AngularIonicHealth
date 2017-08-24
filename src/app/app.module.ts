@@ -14,6 +14,7 @@ import { ProfileModule } from '../pages/profile/profile.module';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FeedPage } from '../pages/feed/feed';
+import { FeedUploadPage } from '../pages/feed/feed-upload/feed-upload';
 import { ListPage } from '../pages/plans/list/list';
 import { PlansPage } from '../pages/plans/plans';
 import { PlansSettingsPage } from '../pages/plans/plans-settings/plans-settings';
@@ -36,12 +37,14 @@ import { CameraProvider } from '../providers/camera/camera.provider';
 import { UsersProvider } from '../providers/users/users.provider';
 import { NutritionProvider } from '../providers/nutrition/nutrition.provider';
 import { FollowProvider } from '../providers/follow/follow.provider';
+import { FeedProvider } from '../providers/feed/feed.provider';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     FeedPage,
+    FeedUploadPage,
     ListPage,
     PlansPage,
     PlansSettingsPage,
@@ -64,6 +67,7 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     MyApp,
     HomePage,
     FeedPage,
+    FeedUploadPage,
     ListPage,
     PlansPage,
     PlansSettingsPage,
@@ -84,7 +88,8 @@ import { FollowProvider } from '../providers/follow/follow.provider';
     CameraProvider,
     UsersProvider,
     NutritionProvider,
-    FollowProvider
+    FollowProvider,
+    FeedProvider
   ]
 })
 export class AppModule {}
